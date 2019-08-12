@@ -6,7 +6,7 @@ public class AnagramsProcessor {
 
     public String process(String inputStr){
         String finalResult = "";
-        if(!(inputStr == null)) {
+        if(inputStr != null) {
             String[] splitedInput = inputStr.split(SEPARATOR);
             splitedInput = deleteSymbols(splitedInput);
             String result = reverseInput(splitedInput);
