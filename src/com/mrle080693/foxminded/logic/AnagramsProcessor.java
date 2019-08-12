@@ -5,10 +5,17 @@ public class AnagramsProcessor {
     private final String PATTERN = "[^a-zA-Z' ']";
 
     public String process(String inputStr){
-        String[] splitedInput = splitInput(inputStr);
-        splitedInput = deleteSymbols(splitedInput);
-        String result = reverseInput(splitedInput);
-        return insertSymbols(inputStr, result);
+        String finalResult = "Nothing To Show";
+        try {
+            String[] splitedInput = splitInput(inputStr);
+            splitedInput = deleteSymbols(splitedInput);
+            String result = reverseInput(splitedInput);
+            finalResult = insertSymbols(inputStr, result);
+        } catch(Exception e){
+            System.err.println("Something wrong!!!");
+            e.printStackTrace();
+        }
+        return finalResult;
     }
 
     public String[] splitInput(String inputStr){
@@ -40,5 +47,9 @@ public class AnagramsProcessor {
             }
         }
         return result;
+    }
+
+    public String getResult(String inputStr){
+        return process(inputStr);
     }
 }

@@ -10,6 +10,6 @@ public class Main {
         String inputStr = scanner.nextLine();
 
         AnagramsProcessor anagramsProcessor = new AnagramsProcessor();
-        System.out.println(anagramsProcessor.process(inputStr));
+        System.out.println(anagramsProcessor.getResult(inputStr));
     }
 }
