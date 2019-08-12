@@ -1,6 +1,6 @@
-package com.mrle080693.foxminded;
+package com.foxminded.anagram;
 
-import com.mrle080693.foxminded.processors.AnagramsProcessor;
+import com.foxminded.anagram.processors.AnagramsProcessor;
 
 import java.util.Scanner;
 
@@ -10,6 +10,6 @@ public class Main {
         String inputStr = scanner.nextLine();
 
         AnagramsProcessor anagramsProcessor = new AnagramsProcessor();
-        System.out.println(anagramsProcessor.getResult(inputStr));
+        System.out.println(anagramsProcessor.process(inputStr));
     }
 }

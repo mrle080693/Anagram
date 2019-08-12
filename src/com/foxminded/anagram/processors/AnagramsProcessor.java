@@ -1,35 +1,28 @@
-package com.mrle080693.foxminded.processors;
+package com.foxminded.anagram.processors;
 
 public class AnagramsProcessor {
     private final String SEPARATOR = " ";
     private final String PATTERN = "[^a-zA-Z' ']";
 
     public String process(String inputStr){
-        String finalResult = "Nothing To Show";
-        try {
-            String[] splitedInput = splitInput(inputStr);
+        String finalResult = "";
+        if(!(inputStr == null)) {
+            String[] splitedInput = inputStr.split(SEPARATOR);
             splitedInput = deleteSymbols(splitedInput);
             String result = reverseInput(splitedInput);
             finalResult = insertSymbols(inputStr, result);
-        } catch(Exception e){
-            System.err.println("Something wrong!!!");
-            e.printStackTrace();
         }
         return finalResult;
     }
 
-    public String[] splitInput(String inputStr){
-        return inputStr.split(SEPARATOR);
-    }
-
-    public String[] deleteSymbols(String[] splitedInput) {
+    private String[] deleteSymbols(String[] splitedInput) {
         for (int i = 0; i <= splitedInput.length - 1; i++) {
             splitedInput[i] = splitedInput[i].replaceAll(PATTERN, "");
         }
         return splitedInput;
     }
 
-    public String reverseInput(String[] splitedInput){
+    private String reverseInput(String[] splitedInput){
         String result = "";
         for(int i = 0; i <= splitedInput.length - 1; i++) {
             splitedInput[i] = new StringBuffer(splitedInput[i]).reverse().toString();
@@ -38,18 +31,14 @@ public class AnagramsProcessor {
         return result;
     }
 
-    public String insertSymbols(String inputStr, String result){
+    private String insertSymbols(String inputStr, String result) {
         String[] charArr = new String[inputStr.length()];
-        for(int i = 0; i <= inputStr.length() - 1; i++){
+        for (int i = 0; i <= inputStr.length() - 1; i++) {
             charArr[i] = inputStr.substring(i, i + 1);
-            if(charArr[i].matches(PATTERN)){
+            if (charArr[i].matches(PATTERN)) {
                 result = result.substring(0, i) + charArr[i] + result.substring(i);
             }
         }
         return result;
-    }
-
-    public String getResult(String inputStr){
-        return process(inputStr);
     }
 }
