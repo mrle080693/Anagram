@@ -1,6 +1,6 @@
 package com.mrle080693.foxminded;
 
-import com.mrle080693.foxminded.logic.AnagramsProcessor;
+import com.mrle080693.foxminded.processors.AnagramsProcessor;
 
 import java.util.Scanner;
 
