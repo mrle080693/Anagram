@@ -2,7 +2,7 @@ package com.foxminded.anagram.processors;
 
 public class AnagramsProcessor {
     private final String SEPARATOR = " ";
-    private final String PATTERN = "[^a-zA-Z' ']";
+    private final String PATTERN = "[^\\p{L}\\s]";
 
     public String process(String inputStr){
         String finalResult = "";
