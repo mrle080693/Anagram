@@ -2,22 +2,22 @@ package com.foxminded.anagram.processors;
 
 public class AnagramsProcessor {
     private final String SEPARATOR = " ";
-    private final String PATTERN = "[^\\p{L}\\s]";
+    private final String NON_LETTERS = "[^\\p{L}\\s]";
 
-    public String process(String inputStr){
-        String finalResult = "";
-        if(inputStr != null) {
-            String[] splitedInput = inputStr.split(SEPARATOR);
+    public String process(String userInput){
+        String result = "";
+        if(userInput != null) {
+            String[] splitedInput = userInput.split(SEPARATOR);
             splitedInput = deleteSymbols(splitedInput);
-            String result = reverseInput(splitedInput);
-            finalResult = insertSymbols(inputStr, result);
+            result = reverseInput(splitedInput);
+            result = insertSymbols(userInput, result);
         }
-        return finalResult;
+        return result;
     }
 
     private String[] deleteSymbols(String[] splitedInput) {
         for (int i = 0; i <= splitedInput.length - 1; i++) {
-            splitedInput[i] = splitedInput[i].replaceAll(PATTERN, "");
+            splitedInput[i] = splitedInput[i].replaceAll(NON_LETTERS, "");
         }
         return splitedInput;
     }
@@ -31,12 +31,12 @@ public class AnagramsProcessor {
         return result;
     }
 
-    private String insertSymbols(String inputStr, String result) {
-        String[] charArr = new String[inputStr.length()];
-        for (int i = 0; i <= inputStr.length() - 1; i++) {
-            charArr[i] = inputStr.substring(i, i + 1);
-            if (charArr[i].matches(PATTERN)) {
-                result = result.substring(0, i) + charArr[i] + result.substring(i);
+    private String insertSymbols(String userInput, String result) {
+        String[] inputAsArray = new String[userInput.length()];
+        for (int i = 0; i <= userInput.length() - 1; i++) {
+            inputAsArray[i] = userInput.substring(i, i + 1);
+            if (inputAsArray[i].matches(NON_LETTERS)) {
+                result = result.substring(0, i) + inputAsArray[i] + result.substring(i);
             }
         }
         return result;
