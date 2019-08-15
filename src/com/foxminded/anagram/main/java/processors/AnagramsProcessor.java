@@ -1,4 +1,4 @@
-package com.foxminded.anagram.processors;
+package com.foxminded.anagram.main.java.processors;
 
 public class AnagramsProcessor {
     private final String SEPARATOR = " ";
@@ -33,13 +33,13 @@ public class AnagramsProcessor {
         return result;
     }
 
-    private String insertSymbols(String input, String inputOnlyLetters) {
-        String[] inputAsArray = new String[input.length()];
-        String result = inputOnlyLetters;
+    private String insertSymbols(String input, String inputForLettersInsert) {
+        String[] inputAsCharArray = new String[input.length()];
+        String result = inputForLettersInsert;
         for (int i = 0; i <= input.length() - 1; i++) {
-            inputAsArray[i] = input.substring(i, i + 1);
-            if (inputAsArray[i].matches(NON_LETTERS_PATTERN)) {
-                result = result.substring(0, i) + inputAsArray[i] + result.substring(i);
+            inputAsCharArray[i] = input.substring(i, i + 1);
+            if (inputAsCharArray[i].matches(NON_LETTERS_PATTERN)) {
+                result = result.substring(0, i) + inputAsCharArray[i] + result.substring(i);
             }
         }
         return result;
