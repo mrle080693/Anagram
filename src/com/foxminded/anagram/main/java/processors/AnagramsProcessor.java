@@ -5,12 +5,13 @@ public class AnagramsProcessor {
     private final String NON_LETTERS_PATTERN = "[^\\p{L}\\s]";
 
     public String process(String input){
-        String result = "";
+        String result = null;
         if(input != null) {
             String[] splitedInput = input.split(SEPARATOR);
             splitedInput = deleteSymbols(splitedInput);
             result = reverseInput(splitedInput);
             result = insertSymbols(input, result);
+            result = result.substring(0, result.length() - 1);
         }
         return result;
     }
