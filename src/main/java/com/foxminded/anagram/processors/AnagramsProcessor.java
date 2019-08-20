@@ -1,4 +1,4 @@
-package com.foxminded.anagram.main.java.processors;
+package main.java.com.foxminded.anagram.processors;
 
 public class AnagramsProcessor {
     private final String SEPARATOR = " ";
@@ -7,11 +7,30 @@ public class AnagramsProcessor {
     public String process(String input){
         String result = null;
         if(input != null) {
-            String[] splitedInput = input.split(SEPARATOR);
-            splitedInput = deleteSymbols(splitedInput);
-            result = reverseInput(splitedInput);
-            result = insertSymbols(input, result);
-            result = result.substring(0, result.length() - 1);
+            if(!ifOnlySeparators(input)) {
+                String[] splitedInput = input.split(SEPARATOR);
+                splitedInput = deleteSymbols(splitedInput);
+                result = reverseInput(splitedInput);
+                result = insertSymbols(input, result);
+                result = result.substring(0, input.length());
+            }
+            if(ifOnlySeparators(input)){
+                result = input;
+            }
+        }
+        // It is a joke .)
+        if(input == null){
+            result = "llun :) trololo";
+        }
+        return result;
+    }
+
+    private boolean ifOnlySeparators(String input){
+        boolean result = true;
+        for(int i = 0; i <= input.length() - 1; i++){
+            if(!input.substring(i,i + 1).equals(" ")){
+                result = false;
+            }
         }
         return result;
     }
