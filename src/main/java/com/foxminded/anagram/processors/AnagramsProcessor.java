@@ -18,10 +18,6 @@ public class AnagramsProcessor {
                 result = input;
             }
         }
-        // It is a joke .)
-        if(input == null){
-            result = "llun :) trololo";
-        }
         return result;
     }
 
