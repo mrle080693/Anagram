@@ -1,6 +1,6 @@
 package test.java;
 
-import main.java.com.foxminded.anagram.processors.AnagramsProcessor;
+import com.foxminded.anagram.main.java.processors.AnagramsProcessor;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -24,15 +24,15 @@ class TestAnagramsProcessor {
     }
 
     @Test
-    void processMustReturnSeparatorWhenInputStringIsSeparator(){
-        expected = " ";
+    void processMustReturnEmptyStringWhenInputStringIsSeparator(){
+        expected = "";
         actual = anagramsProcessor.process(" ");
         assertEquals(expected, actual);
     }
 
     @Test
-    void processMustReturnSeparatorsWhenInputStringIsSeparators(){
-        expected = "   ";
+    void processMustReturnEmptyStringWhenInputStringIsSeparators(){
+        expected = "";
         actual = anagramsProcessor.process("   ");
         assertEquals(expected, actual);
     }
