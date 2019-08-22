@@ -6,7 +6,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-    <groupId>mr.Le</groupId>
+    <groupId>com.foxminded</groupId>
     <artifactId>anagram</artifactId>
     <version>1.0-SNAPSHOT</version>
     <dependencies>
