@@ -1,6 +1,6 @@
-package main.java.com.fosminded.anagram;
+package com.fosminded.anagram;
 
-import main.java.com.fosminded.anagram.processors.AnagramsProcessor;
+import com.fosminded.anagram.processors.AnagramsProcessor;
 
 import java.util.Scanner;
 

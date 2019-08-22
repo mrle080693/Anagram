@@ -1,6 +1,6 @@
-package test.java.com.foxminded.anagram;
+package com.foxminded.anagram;
 
-import main.java.com.fosminded.anagram.processors.AnagramsProcessor;
+import com.fosminded.anagram.processors.AnagramsProcessor;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
