@@ -1,9 +1,10 @@
-package com.foxminded.anagram;
+package com.foxminded.anagram.test;
 
-import com.foxminded.anagram.processors.AnagramsProcessor;
+import com.foxminded.anagram.java.processors.AnagramsProcessor;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 class TestAnagramsProcessor {
     private AnagramsProcessor anagramsProcessor = new AnagramsProcessor();

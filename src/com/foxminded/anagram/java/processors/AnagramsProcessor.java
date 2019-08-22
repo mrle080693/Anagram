@@ -1,4 +1,4 @@
-package com.foxminded.anagram.processors;
+package com.foxminded.anagram.java.processors;
 
 public class AnagramsProcessor {
     private final String SEPARATOR = " ";
