@@ -1,4 +1,4 @@
-package com.foxminded.anagram.main.java.processors;
+package com.foxminded.anagrams.processors;
 
 public class AnagramsProcessor {
     private final String SEPARATOR = " ";
@@ -11,10 +11,12 @@ public class AnagramsProcessor {
             splitedInput = deleteSymbols(splitedInput);
             result = reverseInput(splitedInput);
             result = insertSymbols(input, result).trim();
+            if(result.length() == 0){
+                result = input;
+            }
         }
         return result;
     }
-
     private String[] deleteSymbols(String[] input) {
         String[] result = new String[input.length];
         for (int i = 0; i <= input.length - 1; i++) {
@@ -22,7 +24,6 @@ public class AnagramsProcessor {
         }
         return result;
     }
-
     private String reverseInput(String[] input){
         String[] reversedInput = new String[input.length];
         String result = "";
@@ -32,7 +33,6 @@ public class AnagramsProcessor {
         }
         return result;
     }
-
     private String insertSymbols(String input, String inputReversedLetters) {
         String[] inputAsChars = new String[input.length()];
         String result = inputReversedLetters;

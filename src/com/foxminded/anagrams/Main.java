@@ -1,6 +1,6 @@
-package com.foxminded.anagram.main.java;
+package com.foxminded.anagrams;
 
-import com.foxminded.anagram.main.java.processors.AnagramsProcessor;
+import com.foxminded.anagrams.processors.AnagramsProcessor;
 
 import java.util.Scanner;
 
