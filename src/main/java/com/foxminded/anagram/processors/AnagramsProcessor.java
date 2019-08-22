@@ -4,14 +4,14 @@ public class AnagramsProcessor {
     private final String SEPARATOR = " ";
     private final String NON_LETTERS_PATTERN = "[^\\p{L}\\s]";
 
-    public String process(String input){
+    public String process(String input) {
         String result = null;
         if(input != null) {
             String[] splitedInput = input.split(SEPARATOR);
             splitedInput = deleteSymbols(splitedInput);
             result = reverseInput(splitedInput);
             result = insertSymbols(input, result).trim();
-            if(result.length() == 0){
+            if(result.length() == 0) {
                 result = input;
             }
         }
