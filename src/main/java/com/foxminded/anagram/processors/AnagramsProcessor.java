@@ -1,8 +1,8 @@
 package com.foxminded.anagram.processors;
 
 public class AnagramsProcessor {
-    private final String SEPARATOR = " ";
-    private final String NON_LETTERS_PATTERN = "[^\\p{L}\\s]";
+    private static final String SEPARATOR = " ";
+    private static final String NON_LETTERS_PATTERN = "[^\\p{L}\\s]";
 
     public String process(String input) {
         String result = null;
@@ -26,12 +26,14 @@ public class AnagramsProcessor {
     }
     private String reverseInput(String[] input){
         String[] reversedInput = new String[input.length];
-        String result = "";
+        StringBuilder result = new StringBuilder();
         for(int i = 0; i <= input.length - 1; i++) {
             reversedInput[i] = new StringBuffer(input[i]).reverse().toString();
-            result = result + reversedInput[i] + SEPARATOR;
+            result.append(result)
+                    .append(reversedInput[i])
+                    .append(SEPARATOR);
         }
-        return result;
+        return result.toString();
     }
     private String insertSymbols(String input, String inputReversedLetters) {
         String[] inputAsChars = new String[input.length()];
